@@ -1,88 +1,75 @@
-/* Скидання стилів */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --primary-blue: #0078d7; /* точний синій з макета */
+  --nav-spacing: 24px;     /* заміни на spacing з Figma (20–30px) */
+  --link-height: 40px;     /* заміни на height з Figma (40–48px) */
+  --active-line: 2px;      /* товщина синьої лінії (::after) */
 }
 
 body {
-  font-family: Roboto, sans-serif;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Хедер */
 .header {
   width: 100%;
 }
 
 .header__container {
+  max-width: 1440px; /* вибери одне значення; заміни на 1200px, якщо так у макеті */
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
-/* Логотип */
+/* Логотип: стилі на img, не як текст лінка */
 .header__logo img {
-  height: 40px;
-}
-
-/* Навігація */
-.header__nav {
-  margin-left: 40px;
+  height: var(--link-height);
+  display: block;
 }
 
 .header__list {
-  display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
+/* Відступи між пунктами — без gap; тільки між сусідами */
 .headeritem + .headeritem {
-  margin-left: 20px; /* Відступи між пунктами */
+  margin-left: var(--nav-spacing);
 }
 
+/* Лінки: висота, центрування, uppercase; без padding */
 .header__link {
-  display: inline-block;
-  height: 40px; /* Висота з макету */
-  line-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--link-height);
   text-decoration: none;
-  color: #333;
-  text-align: center;
+  color: #212121;
+  text-transform: uppercase;
+  font-weight: 500; /* локально, не в body */
 }
 
-/* Активне посилання */
+/* Hover тільки на <a>; колір через змінну */
+.header__link:hover {
+  color: var(--primary-blue);
+}
+
+/* Активний стан: синя лінія через ::after; клас на <a> */
 .header__link.is-active {
-  color: #007bff;
   position: relative;
 }
 
 .header__link.is-active::after {
   content: '';
   position: absolute;
-  bottom: -2px;
   left: 0;
+  bottom: 0; /* якщо треба опустити — постав -1px після звірки з макетом */
   width: 100%;
-  height: 2px;
-  background-color: #007bff;
-}
-
-/* Hover */
-.header__link:hover {
-  color: #0056b3;
-}
-
-/* Кнопки */
-.header__actions {
-  display: flex;
-  align-items: center;
-}
-
-.header__search,
-.header__cart {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  margin-left: 15px;
+  height: var(--active-line);
+  background: var(--primary-blue);
 }

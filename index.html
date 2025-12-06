@@ -1,63 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Moyo header</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moyo Header</title>
+  <!-- Правильне підключення Roboto 500 (один тег link) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo" aria-label="Moyo">
+        <img src="./images/logo.png" alt="Moyo">
+      </a>
 
-  <body>
-    <header class="header">
-      <div class="header__container container">
-        <a href="#" class="header__logo">
-          <img src="./images/logo.png" alt="Moyo logo" />
-        </a>
-
-        <nav class="header__nav">
-          <ul class="header__list">
-            <li class="header__item">
-              <a href="#" class="header__link">Smartphones</a>
-            </li>
-
-            <li class="header__item">
-              <a href="#" class="header__link">TVs</a>
-            </li>
-
-            <li class="header__item">
-              <a href="#" class="header__link">Accessories</a>
-            </li>
-
-            <li class="header__item">
-              <a
-                href="#"
-                class="header__link is-active"
-                data-qa="hover"
-              >
-                Laptops & computers
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="header__actions">
-          <button class="header__search" aria-label="Search">
-            🔍
-          </button>
-
-          <button class="header__cart" aria-label="Cart">
-            🛒
-          </button>
-        </div>
-      </div>
-    </header>
-  </body>
+      <nav class="header__nav" aria-label="Main navigation">
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="#home" class="header__link">Home</a>
+          </li>
+          <li class="header__item">
+            <a href="#shop" class="header__link">Shop</a>
+          </li>
+          <li class="header__item">
+            <a href="#about" class="header__link">About</a>
+          </li>
+          <li class="header__item">
+            <a href="#contact" class="header__link is-active" data-qa="hover">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</body>
 </html>
