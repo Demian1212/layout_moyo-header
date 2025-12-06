@@ -1,3 +1,88 @@
-body {
+/* Скидання стилів */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+/* Хедер */
+.header {
+  width: 100%;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Логотип */
+.header__logo img {
+  height: 40px;
+}
+
+/* Навігація */
+.header__nav {
+  margin-left: 40px;
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+}
+
+.headeritem + .headeritem {
+  margin-left: 20px; /* Відступи між пунктами */
+}
+
+.header__link {
+  display: inline-block;
+  height: 40px; /* Висота з макету */
+  line-height: 40px;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+}
+
+/* Активне посилання */
+.header__link.is-active {
+  color: #007bff;
+  position: relative;
+}
+
+.header__link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+}
+
+/* Hover */
+.header__link:hover {
+  color: #0056b3;
+}
+
+/* Кнопки */
+.header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.header__search,
+.header__cart {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
 }
