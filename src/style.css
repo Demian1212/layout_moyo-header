@@ -1,16 +1,26 @@
-* { box-sizing: border-box; }
-html, body, ul, li { margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --primary-blue: #0078d7; /* перевір у Figma */
+  --primary-blue: #00acdc;
   --color-black: #000;
-  --link-height: 40px;     /* точне значення з макета */
-  --nav-spacing: 32px;     /* точне значення з макета */
-  --active-line: 2px;
+  --link-height: 60px;
+  --nav-spacing: 20px;
+  --active-line: 4px;
 }
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 500;
   font-style: normal;
   color: var(--color-black);
@@ -20,12 +30,12 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .header__logo img {
-  height: var(--link-height);
-  display: block;
+  height: 40px;
+  display: flex;
 }
 
 .header__list {
@@ -34,7 +44,7 @@ html {
   align-items: center;
 }
 
-.headeritem + .headeritem {
+.header__item+.header__item {
   margin-left: var(--nav-spacing);
 }
 
@@ -63,8 +73,9 @@ html {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0; /* якщо лінія обрізається, можна поставити bottom:-1px */
+  bottom: 0;
   width: 100%;
   height: var(--active-line);
+  border-radius: 8px;
   background: var(--primary-blue);
 }
