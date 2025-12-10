@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Moyo Header</title>
-  <!-- Правильне підключення Roboto 500 (один тег link) -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <header class="header">
-    <div class="header__container">
-      <a href="/" class="header__logo" aria-label="Moyo">
-        <img src="./images/logo.png" alt="Moyo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moyo header</title>
+    <!-- Roboto 500 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet" />
+    <!-- Якщо style.css у корені → ./style.css -->
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="header__logo">
+        <img src="src/images/logo.png" alt="Moyo" />
       </a>
 
       <nav class="header__nav" aria-label="Main navigation">
         <ul class="header__list">
+          <li class="headeritem"><a href="#apple" class="headerlink">Apple</a></li>
+          <li class="headeritem"><a href="#samsung" class="headerlink">Samsung</a></li>
+          <li class="headeritem"><a href="#smartphones" class="headerlink">Smartphones</a></li>
           <li class="header__item">
-            <a href="#home" class="header__link">Home</a>
+            <a href="#laptops" class="header__link is-active" data-qa="hover">Laptops & Computers</a>
           </li>
-          <li class="header__item">
-            <a href="#shop" class="header__link">Shop</a>
-          </li>
-          <li class="header__item">
-            <a href="#about" class="header__link">About</a>
-          </li>
-          <li class="header__item">
-            <a href="#contact" class="header__link is-active" data-qa="hover">Contact</a>
-          </li>
+          <li class="headeritem"><a href="#gadgets" class="headerlink">Gadgets</a></li>
+          <li class="headeritem"><a href="#tablets" class="headerlink">Tablets</a></li>
+          <li class="headeritem"><a href="#photo" class="headerlink">Photo</a></li>
+          <li class="headeritem"><a href="#video" class="headerlink">Video</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
-</body>
+    </header>
+  </body>
 </html>
